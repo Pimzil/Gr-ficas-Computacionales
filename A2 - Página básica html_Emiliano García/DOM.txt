@@ -1,0 +1,21 @@
+html
+│
+├── head
+│   ├── meta
+│   │   └── charset="UTF-8"
+│   ├── meta
+│   │   └── name="viewport" content="width=device-width, initial-scale=1.0"
+│   ├── title
+│   │   └── Página Básica
+│   └── style
+│       └── CSS styles
+│
+└── body
+    ├── h1
+    │   └── Personajes Favoritos
+    ├── h2
+    │   └── Por Emiliano García
+    ├── p
+    │   └── Algunos de mis personajes favoritos de diversos medios.
+    └── img
+        └── src="foto página html.jpg"

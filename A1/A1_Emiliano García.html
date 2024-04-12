@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reto Sinoidal</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: rgb(217, 247, 255);
+      margin: 0;
+    }
+
+    #canvas {
+      background-image: url("wci.jpg");
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="canvas" width="1347" height="611"></canvas>
+<script src="utils.js"></script>
+<script src="./classes/ball.js"></script>
+<script>
+  window.onload = function () {
+    var canvas = document.getElementById('canvas'),
+      context = canvas.getContext('2d'),
+      baller = new Image(),
+      xspeed = 5,  
+      yspeed = 0.05,
+      initialScale = 0.2,  
+      posicionX = 0,
+      posicionY = canvas.height / 2;
+
+    (function drawFrame() {
+      window.requestAnimationFrame(drawFrame, canvas);
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      context.save();
+      baller.src = "sanji.webp";
+
+      var scale = initialScale + posicionX / canvas.width;
+      context.translate(posicionX, posicionY);
+      context.scale(scale, scale);
+
+      context.drawImage(baller, -baller.width / 4, -baller.height / 4, baller.width / 2, baller.height / 2);
+
+      context.restore();
+
+      posicionX += xspeed;
+
+      if (posicionX - baller.width / 2 > canvas.width) {
+        posicionX = 0;
+      }
+    }());
+  };
+</script>
+</body>
+</html>

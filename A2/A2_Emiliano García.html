@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Reto Sinoidal</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: rgb(217, 247, 255);
+      margin: 0;
+    }
+
+    #canvas {
+      background-image: url("fondo.webp");
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+<audio autoplay>
+  <source src="audio.mp3" type="audio/mp3">
+</audio>
+
+<canvas id="canvas" width="1350" height="620"></canvas>
+<script src="utils.js"></script>
+<script src="./classes/ball.js"></script>
+<script>
+  window.onload = function () {
+    var canvas = document.getElementById('canvas'),
+      context = canvas.getContext('2d'),
+      baller = new Image(),
+      angle = 0,
+      centerY = 200,
+      range = 100,
+      xspeed = 5,
+      yspeed = 0.05,
+      posicionX = 0,
+      posicionY = centerY / 2 + Math.sin(angle) * range;
+
+    (function drawFrame() {
+      window.requestAnimationFrame(drawFrame, canvas);
+      context.clearRect(0, 0, canvas.width, canvas.height);
+
+      context.save();
+      baller.src = "star.png";
+
+      posicionX += xspeed;
+
+      if (posicionX + baller.width / 2 > canvas.width || posicionX < 0) {
+        xspeed = -xspeed;
+      }
+
+      posicionY = centerY / 2 + Math.sin(angle) * range;
+      angle += yspeed;
+      context.drawImage(baller, posicionX, posicionY, baller.width, baller.height);
+      context.restore();
+    }());
+  };
+</script>
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Canvas Estático</title>
+  <style>
+      canvas{
+          border: 3px solid slategray;
+          background-color: white;
+          text-align: center;
+      }
+  </style>
+<script>
+  window.onload=function(){
+      var canvas = document.getElementById("micanvas");
+      var context = canvas.getContext("2d");
+      context.fillStyle = "rgba(252, 186, 3,.5)";
+      context.fillRect(80,60,200,300);
+
+      context.fillStyle = "rgba(170, 97, 207,.5)";
+      context.fillRect(100,100,200,300);
+
+      context.fillStyle = "rgba(252,3,236,.5)";
+      context.fillRect(200,250,200,300);
+
+      context.fillStyle = "rgba(141, 199, 201,.5)";
+      context.fillRect(200,260,210,300);
+
+      context.fillStyle = "rgba(186, 68, 0,.5)";
+      context.fillRect(240,290,200,300);
+      
+  }
+</script>
+
+  </head>
+<body>
+   <canvas id="micanvas" width="800" height="600"></canvas>
+</body>
+</html>

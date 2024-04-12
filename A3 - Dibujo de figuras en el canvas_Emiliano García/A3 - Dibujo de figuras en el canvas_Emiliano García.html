@@ -1,0 +1,197 @@
+//Emiliano García Gutiérrez - T032041 - viernes 22 de marzo del 2024
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Figuras07</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      text-align: center;
+      background-color: rgb(255, 255, 255);
+    }
+    canvas {
+      text-align: center;
+    }
+    h1 {
+      text-align: center;
+      font-size: xx-large;
+      font-family: 'Times New Roman', Times, serif;
+      color: rgb(0, 0, 0);        
+    }
+  </style>
+</head>
+
+<h1>Dibujos</h1>
+
+<body>
+  <canvas id="canvas" width="1200" height="850"></canvas>
+  <aside></aside>
+
+  <script>
+    window.onload = function () {
+      var canvas = document.getElementById('canvas'),
+        context = canvas.getContext('2d');
+
+      context.save();
+      context.fillStyle = "rgb(0, 204, 0)";
+      context.strokeStyle = "black";
+      context.lineWidth = 5;
+      context.beginPath();
+      context.moveTo(200, 200); 
+      context.lineTo(200, 200);
+      context.quadraticCurveTo(120, 85, 50, 200);
+      context.closePath();
+      context.stroke();
+      context.fill();
+      context.restore();
+-
+      context.save();
+      var gradient = context.createLinearGradient(50, 200, 200, 200);
+      gradient.addColorStop(0, "rgba(255, 255, 255, 0)"); 
+      gradient.addColorStop(1, "rgba(255, 255, 255, 1)"); 
+      context.fillStyle = gradient;
+      context.beginPath();
+      context.moveTo(50, 200);
+      context.quadraticCurveTo(120, 85, 200, 200);
+      context.fill();
+      context.restore();
+
+      context.save();
+      context.fillStyle = "rgb(253,227,117,255)";
+      context.strokeStyle = "black";
+      context.lineWidth = 3;
+      context.beginPath();
+      context.fillRect(95, 203, 42, 65);
+      context.strokeRect(95, 203, 42, 65);
+      context.closePath();
+      context.stroke();
+      context.fill();
+      context.closePath();
+      context.restore();
+
+      context.save();
+      context.fillStyle = "rgb(253,227,117,255)";
+      context.strokeStyle = "black";
+      context.lineWidth = 3;
+      context.beginPath();
+      context.fillRect(95, 203, 42, 65);
+      context.strokeRect(95, 203, 42, 65);
+      context.closePath();
+      context.stroke();
+      context.fill();
+      context.closePath();
+      context.restore();
+
+      context.save();
+      context.fillStyle = "rgb(255, 140, 26)";
+      context.strokeStyle = "black";
+      context.lineWidth = 5;
+      context.beginPath();
+      context.moveTo(700, 395);
+      context.lineTo(750, 350);
+      context.lineTo(810, 395);
+      context.closePath();
+      context.stroke();
+      context.fill();
+      context.restore();
+
+      context.save();
+      context.fillStyle = "rgb(255, 255, 204)";
+      context.strokeStyle = "black";
+      context.lineWidth = 5;
+      context.beginPath();
+      context.fillRect(700, 398, 100, 85);
+      context.strokeRect(700, 398, 100, 85);
+      context.closePath();
+      context.stroke();
+      context.fill();
+      context.closePath();
+      context.restore();
+
+      context.save();
+      context.fillStyle = "rgb(255, 243, 74)";
+      context.beginPath();
+      context.moveTo(570, 330);
+      context.lineTo(500, 400);
+      context.lineTo(600, 400);
+      context.closePath();
+      context.fill();
+      context.restore();
+
+      context.save();
+      context.fillStyle = "rgb(255, 243, 74)";
+      context.beginPath();
+      context.moveTo(600, 400);
+      context.lineTo(575, 450);
+      context.lineTo(550, 400);
+      context.closePath();
+      context.fill();
+      context.restore(); 
+
+      context.save();
+      context.fillStyle = "rgb(255, 243, 74)";
+      context.beginPath();
+      context.moveTo(600, 350);
+      context.lineTo(650, 350);
+      context.lineTo(575, 450);
+      context.closePath();
+      context.fill();
+      context.restore();
+
+      context.save();
+      context.fillStyle = "rgb(255, 243, 74)";
+      context.beginPath();
+      context.moveTo(600, 350);
+      context.lineTo(600, 300);
+      context.lineTo(550, 350);
+      context.closePath();
+      context.fill();
+      context.restore();
+
+      context.save();
+      context.fillStyle = "rgb(255, 243, 74)";
+      context.beginPath();
+      context.moveTo(500, 300);
+      context.lineTo(600, 400);
+      context.lineTo(600, 350);
+      context.closePath();
+      context.fill();
+      context.restore();
+
+      context.save();
+      context.fillStyle = "rgb(255, 251, 199)";
+      context.strokeStyle = "black";
+      context.lineWidth = 5;
+      context.beginPath();
+      context.arc(700, 200, 75, 0, 2 * Math.PI);
+      context.fill();
+      context.closePath();
+      context.restore();
+
+      context.save();
+      var gradient = context.createLinearGradient(690, 425, 600, 470);
+      gradient.addColorStop(0, "red");
+      gradient.addColorStop(1, "white");
+      context.fillStyle = gradient;
+      context.beginPath();
+      context.moveTo(990, 425);
+      context.lineTo(900, 425);
+      context.lineTo(900, 470);
+      context.closePath();
+      context.fill();
+      context.restore();
+
+      context.save();
+      context.fillStyle = "silver";
+      context.beginPath();
+      context.fillRect(900, 465, 10, 60);
+      context.closePath();
+      context.fill();
+      context.closePath();
+      context.restore();
+
+    };
+  </script>
+</body>
+<html>

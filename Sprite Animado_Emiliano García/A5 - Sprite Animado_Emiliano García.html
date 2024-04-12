@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sprite Animado</title>
+    <style>
+      body { 
+        text-align: center;
+        background-color: rgb(98, 72, 114);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>
+    </h1>
+    <canvas id="canvas" width="351" height="723"></canvas>
+    <script src="sprite.js"></script> 
+    <script>
+    window.onload = function () {
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        var  Wobbuffet = new sprite(); //*** Puedes cambiar el nombre de la variable
+    
+        var backgroundImage = new Image();
+        backgroundImage.src = "fondo.png";
+        Wobbuffet.x = canvas.width / 2.8;
+        Wobbuffet.y = canvas.height / 5;
+
+        backgroundImage.onload = function (){
+            drawFrame();
+        }
+
+      (function drawFrame () {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
+        Wobbuffet.draw(context); 
+        window.requestAnimationFrame(drawFrame, canvas);
+      }());
+
+    };
+    </script>
+  </body>
+</html>
